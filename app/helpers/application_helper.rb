@@ -1,17 +1,22 @@
 module ApplicationHelper
+
+  CAT_AVATAR = "https://68.media.tumblr.com/7d65a925636d6e3df94e2ebe30667c29/tumblr_nq1zg0MEn51qg6rkio1_500.jpg"
+  BLOCK_AVATAR = "https://68.media.tumblr.com/9f9b498bf798ef43dddeaa78cec7b027/tumblr_o51oavbMDx1ugpbmuo7_500.png"
+  TRIANGLE_AVATAR = "http://78.media.tumblr.com/75bad14fee104f69652084d545213291/tumblr_mldfty8fh41qcnibxo5_1280.png"
+  HAT_AVATAR = "https://68.media.tumblr.com/22d1c50c3e2ca1062a94b47a65bfeb6d/tumblr_o51oavbMDx1ugpbmuo10_500.png"
   def default_avatar(user)
     if user.name.present?
       if user.name[0].downcase < 'h'
-        "https://68.media.tumblr.com/7d65a925636d6e3df94e2ebe30667c29/tumblr_nq1zg0MEn51qg6rkio1_500.jpg"
+        CAT_AVATAR
       elsif user.name[0].downcase < 'n'
-        "https://68.media.tumblr.com/9f9b498bf798ef43dddeaa78cec7b027/tumblr_o51oavbMDx1ugpbmuo7_500.png"
+        BLOCK_AVATAR
       elsif user.name[0].downcase < 'u'
-        "http://78.media.tumblr.com/75bad14fee104f69652084d545213291/tumblr_mldfty8fh41qcnibxo5_1280.png"
+        TRIANGLE_AVATAR
       else
-        "https://68.media.tumblr.com/22d1c50c3e2ca1062a94b47a65bfeb6d/tumblr_o51oavbMDx1ugpbmuo10_500.png"
+        HAT_AVATAR
       end
     else
-      "https://68.media.tumblr.com/7d65a925636d6e3df94e2ebe30667c29/tumblr_nq1zg0MEn51qg6rkio1_500.jpg"
+      CAT_AVATAR
     end
   end
 
@@ -29,6 +34,10 @@ module ApplicationHelper
     else
       "#{tips.count} tips"
     end
-
   end
+
+  def format_time(instance)
+    instance.created_at.strftime("%e %b %Y at %H:%M")
+  end
+
 end
