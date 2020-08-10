@@ -6,14 +6,12 @@ module ApplicationHelper
   HAT_AVATAR = "https://68.media.tumblr.com/22d1c50c3e2ca1062a94b47a65bfeb6d/tumblr_o51oavbMDx1ugpbmuo10_500.png"
   def default_avatar(user)
     if user.name.present?
-      if user.name[0].downcase < 'h'
-        CAT_AVATAR
-      elsif user.name[0].downcase < 'n'
-        BLOCK_AVATAR
-      elsif user.name[0].downcase < 'u'
-        TRIANGLE_AVATAR
-      else
-        HAT_AVATAR
+      username = user.name[0].downcase
+      case(username)
+      when 'a'..'h' then  CAT_AVATAR
+      when 'i'..'n' then  BLOCK_AVATAR
+      when 'o'..'u'  then  TRIANGLE_AVATAR
+      else    HAT_AVATAR
       end
     else
       CAT_AVATAR
