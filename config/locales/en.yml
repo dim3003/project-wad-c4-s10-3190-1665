@@ -32,3 +32,6 @@
 en:
   signup: "Sign up"
   login: "Log in"
+  mission_statement: "Share your programming tips with other developers online!"
+  find_tips: "... or find tips about something:"
+  four_more: "Here are the four most recently active tips:"
