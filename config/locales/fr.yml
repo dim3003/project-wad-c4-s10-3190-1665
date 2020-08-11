@@ -9,5 +9,6 @@ fr:
   helpers:
     label:
       user:
+        name: 'Nom'
         email: 'Email'
         password: 'Mot de passe'

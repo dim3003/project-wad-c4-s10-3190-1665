@@ -40,5 +40,6 @@ en:
   helpers:
     label:
       user:
+        name: 'Name'
         email: 'Email'
         password: 'password'
