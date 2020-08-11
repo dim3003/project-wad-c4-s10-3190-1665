@@ -20,19 +20,24 @@ florian = User.create!(email: 'florian@extensionschool.ch', name: 'Florian')
 sara    = User.create!(email: 'sara@extensionschool.ch',    name: 'Sara')
 linda   = User.create!(email: 'linda@extensionschool.ch',   name: 'Linda')
 
-Tip.create!(title: 'Use #name on a class in Ruby',
-            body:  'Using Class.name returns a String representing the name of a class!  E.g. Integer.name returns "Integer" and ApplicationController.name returns "ApplicationController"',
-            user:  florian)
+
+
+tip_florian_1 = Tip.create!(title: 'Use #name on a class in Ruby',
+                            body:  'Using Class.name returns a String representing the name of a class!  E.g. Integer.name returns "Integer" and ApplicationController.name returns "ApplicationController"',
+                            user:  florian)
+
 Tip.create!(title: 'Getting a substring in Ruby',
             body: 'Use String#[start,length] to return the substring of a String, e.g. "Hello, world"[7,5] => "world"',
             user:  florian)
+
 Tip.create!(title: 'Going backwards in an Array',
             body:  "It's possible to use negative numbers as backwards indexes in Arrays e.g. [1,2,3,4][-1] => 4",
             user:  florian)
 
-Tip.create!(title: 'Using ERB in CSS and Sass files',
-            body:  "Did you know that you can define CSS assets as ERB files, just like .html.erb and .js.erb views?  By using .scss.erb as the extension of a file, the asset pipeline will first process the file as ERB and evaluate Ruby expressions.  Then it will treat the file as Sass and compile it to CSS!",
-            user:  sara)
+tip_sara_1 = Tip.create!(title: 'Using ERB in CSS and Sass files',
+                         body:  "Did you know that you can define CSS assets as ERB files, just like .html.erb and .js.erb views?  By using .scss.erb as the extension of a file, the asset pipeline will first process the file as ERB and evaluate Ruby expressions.  Then it will treat the file as Sass and compile it to CSS!",
+                         user:  sara)
+
 Tip.create!(title: 'Substitute a value in a String',
             body:  "String#gsub can be used to replace any substring with another substring in a String, e.g. 'Learn about :language'.gsub(':language', 'JavaScript') => \"Learn about JavaScript\"",
             user:  sara)
@@ -57,3 +62,19 @@ Tip.create!(title: 'Organize CSS rules in Sass files well',
 Tip.create!(title: 'Just experiment!',
             body:  "The great thing about writing software is that it's easy to try things out and change them before submitting it for a production deployment.  I've found that taking a break and coming back to a difficult programming problem really helps too.",
             user:  linda)
+
+Comment.create!(user: florian,
+                tip: tip_florian_1,
+                body: 'First comment')
+
+Comment.create!(user: florian,
+                tip: tip_florian_1,
+                body: 'Second comment')
+
+Comment.create!(user: florian,
+                tip: tip_sara_1,
+                body: 'First comment')
+
+Comment.create!(user: florian,
+                tip: tip_sara_1,
+                body: 'Second comment')
