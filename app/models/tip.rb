@@ -9,10 +9,12 @@ class Tip < ApplicationRecord
   validates :body,  presence: true
 
 
-    scope :most_recent, -> {order(updated_at: :desc).limit(4)}
+  scope :most_recent, -> {order(updated_at: :desc).limit(4)}
 
-    scope :title_contains,       ->(term) { where('title LIKE ?', "%#{term}%") }
-    scope :description_contains, ->(term) { where('body LIKE ?', "%#{term}%") }
+  scope :title_contains,       ->(term) { where('title LIKE ?', "%#{term}%") }
+  scope :description_contains, ->(term) { where('body LIKE ?', "%#{term}%") }
 
-    scope :search, ->(search_term) { title_contains(search_term).or(description_contains(search_term)) }
+  scope :search, ->(search_term) { title_contains(search_term).or(description_contains(search_term)) }
+
+  paginates_per 8
 end
