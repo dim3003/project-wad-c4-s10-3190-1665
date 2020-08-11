@@ -4,10 +4,13 @@
       <p>Copyright &copy; <%= Time.now.year %> Your Company!</p>
     </div>
     <div>
+
+
       <nav class="nav">
         <p class="nav-link disabled pl-0">Select language:</p>
-        <a class="nav-link" href="#">En</a>
-        <a class="nav-link" href="#">Fr</a>
+        <% I18n.available_locales.each do |locale| %>
+          <%= link_to locale, url_for(locale: locale), class: 'nav-link' %>
+        <% end %>
       </nav>
     </div>
   </div>
