@@ -6,8 +6,8 @@ module ApplicationHelper
   HAT_AVATAR = "https://68.media.tumblr.com/22d1c50c3e2ca1062a94b47a65bfeb6d/tumblr_o51oavbMDx1ugpbmuo10_500.png"
 
   def default_avatar(user)
-    
-    user.name[0].downcase = CAT_AVATAR if user.name.nil?
+
+    return CAT_AVATAR if user.name.nil?
 
     case(user.name[0].downcase)
     when 'a'..'h' then  CAT_AVATAR
