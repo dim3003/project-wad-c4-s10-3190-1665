@@ -9,5 +9,16 @@ class User < ApplicationRecord
   validates :email, presence: true,
                     uniqueness: true
 
+  after_initialize :default_role!
+
+
+  def downcase_email
+    self.email = email.downcase if email
+  end
+  
+  def default_role!
+    self.role ||= 'registered'
+  end
+
   paginates_per 6
 end
