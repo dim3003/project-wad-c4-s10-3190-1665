@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     get  '/account', to: 'account#edit'
     post '/account', to: 'account#update'
 
+    get 'login', to: 'sessions#new'
+
+    get 'signup', to: 'users#new'
+
     namespace :account do
       resources :tips, only: [:index]
     end
