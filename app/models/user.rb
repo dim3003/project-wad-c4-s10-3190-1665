@@ -11,11 +11,12 @@ class User < ApplicationRecord
 
   after_initialize :default_role!
 
+  private
 
   def downcase_email
     self.email = email.downcase if email
   end
-  
+
   def default_role!
     self.role ||= 'registered'
   end
