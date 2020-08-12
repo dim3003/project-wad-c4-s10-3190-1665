@@ -3,6 +3,7 @@ fr:
   login: "Connexion"
   email: "Email"
   password: "Mot de passe"
+  account: "Compte"
   mission_statement: "Partage tes conseils de développment en ligne!"
   find_tips: "... ou trouve des conseils à propos de:"
   four_more: "Les 4 conseils actifs les plus récents:"

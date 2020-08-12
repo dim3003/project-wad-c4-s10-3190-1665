@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 
     if(user.present? && user.authenticate(params[:password]))
       session[:user_id] = user.id
-      redirect_to account_ideas_path
+      redirect_to account_path
     else
       flash[:alert] = "Email or password were invalid.  Please try again"
       render 'new'
