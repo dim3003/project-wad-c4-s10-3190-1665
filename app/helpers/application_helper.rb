@@ -7,7 +7,7 @@ module ApplicationHelper
 
   def default_avatar(user)
 
-    return CAT_AVATAR if user.name.nil?
+    return CAT_AVATAR if user.name[0].nil?
 
     case(user.name[0].downcase)
     when 'a'..'h' then  CAT_AVATAR
