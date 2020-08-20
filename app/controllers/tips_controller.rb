@@ -1,7 +1,11 @@
 class TipsController < ApplicationController
+  include RolesHelper
+
   before_action :set_tip, only: [:show, :edit, :update, :destroy]
 
   before_action :ensure_authenticated, only: [:new, :create, :edit, :update]
+
+  before_action :can_edit?, only: [:edit, :update]
 
   def index
     @tips = Tip.search(params[:q]).page(params[:page])
@@ -64,5 +68,9 @@ class TipsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def tip_params
       params.require(:tip).permit(:title, :body, :user_id)
+    end
+
+    def authorize_to_edit_idea
+      redirect_to(account_path) unless (can_edit?(@tip))
     end
 end
