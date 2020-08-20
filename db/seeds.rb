@@ -26,6 +26,10 @@ linda   = User.create!(email: 'linda@extensionschool.ch',
                        name: 'Linda',
                        password: 'password')
 
+admin   = User.create!(email: 'admin@epfl.com',
+                       password: 'password',
+                       role: 'admin')
+
 tip_florian_1 = Tip.create!(title: 'Use #name on a class in Ruby',
                             body:  'Using Class.name returns a String representing the name of a class!  E.g. Integer.name returns "Integer" and ApplicationController.name returns "ApplicationController"',
                             user:  florian)
