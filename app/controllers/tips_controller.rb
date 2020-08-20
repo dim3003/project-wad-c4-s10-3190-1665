@@ -1,7 +1,7 @@
 class TipsController < ApplicationController
   before_action :set_tip, only: [:show, :edit, :update, :destroy]
 
-  before_action :ensure_authenticated, only: [:new, :create]
+  before_action :ensure_authenticated, only: [:new, :create, :edit, :update]
 
   def index
     @tips = Tip.search(params[:q]).page(params[:page])
