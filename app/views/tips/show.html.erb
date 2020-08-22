@@ -19,7 +19,11 @@
 
   <div class="card-body">
     <p><%= @tip.body %></p>
-    <p class="text-muted">Created by <%= render partial: 'user_link', locals: { user: @tip.user } %> on <%= format_time(@tip) %></p>
+    <% if(@tip.user) %>
+      <p class="text-muted">Created by <%= render partial: 'user_link', locals: { user: @tip.user } %> on <%= format_time(@tip) %></p>
+    <% elsif %>
+      <p class="text-muted">Created by <em>User is no longer with us :(</p>
+    <% end %>
   </div>
 
 
