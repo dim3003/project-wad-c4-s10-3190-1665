@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-  before_action :ensure_admin, only: [:index]
+  before_action :ensure_admin, only: [:index, :edit, :update, :destroy]
 
   def index
     @users = User.all.page(params[:page])
