@@ -12,6 +12,8 @@ class User < ApplicationRecord
 
   after_initialize :default_role!
 
+  mount_uploader :avatar, AvatarUploader
+
   private
 
   def downcase_email
