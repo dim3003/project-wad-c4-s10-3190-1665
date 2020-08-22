@@ -13,7 +13,12 @@ module Account
     before_action :ensure_authenticated
 
     def index
-      @tips = current_user.tips.order(updated_at: :desc)
+
+      if current_user.role == 'admin'
+        @tips =  Tip.all.order(updated_at: :desc)
+      else
+        @tips = current_user.tips.order(updated_at: :desc)
+      end
     end
   end
 end
