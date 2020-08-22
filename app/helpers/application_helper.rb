@@ -9,8 +9,6 @@ module ApplicationHelper
 
     return CAT_AVATAR if user.name[0].nil?
 
-    logger.info(user)
-
     case(user.name[0].downcase)
     when 'a'..'h' then  CAT_AVATAR
     when 'i'..'n' then  BLOCK_AVATAR
