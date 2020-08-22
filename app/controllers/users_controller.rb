@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+  before_action :ensure_admin, only: [:index]
+
   def index
     @users = User.all.page(params[:page])
   end
@@ -60,4 +62,13 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:email, :name, :avatar_url, :password)
     end
+
+    def ensure_admin
+      if (current_user.role == 'admin')
+        return
+      end
+
+      redirect_to(account_path)
+    end
+
 end
