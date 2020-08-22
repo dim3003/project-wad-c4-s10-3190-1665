@@ -6,7 +6,7 @@ class TipsController < ApplicationController
 
   before_action :set_tip,                only: [:show, :edit, :update, :destroy]
 
-  before_action :authorize_to_edit_idea, only: [:edit, :update]
+  before_action :authorize_to_edit_tip, only: [:edit, :update]
 
   def index
     @tips = Tip.search(params[:q]).page(params[:page])
@@ -71,7 +71,7 @@ class TipsController < ApplicationController
       params.require(:tip).permit(:title, :body, :user_id)
     end
 
-    def authorize_to_edit_idea
+    def authorize_to_edit_tip
       redirect_to(account_path) unless (can_edit?(@tip))
     end
 end
