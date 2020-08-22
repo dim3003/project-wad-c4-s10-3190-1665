@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  include RolesHelper
+  
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   before_action :ensure_admin, only: [:index, :edit, :update, :destroy]

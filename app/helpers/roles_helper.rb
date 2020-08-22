@@ -8,4 +8,11 @@ module RolesHelper
     end
   end
 
+  def is_admin?(user)
+    case(current_user.role)
+      when 'admin' then true
+      else false
+    end
+  end
+
 end
