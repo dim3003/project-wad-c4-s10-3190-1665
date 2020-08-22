@@ -4,7 +4,7 @@
     <div>
       <% if (logged_in? && is_admin?(user)) %>
         <%= link_to 'Edit', edit_user_path(user), class: 'btn btn-outline-secondary mr-3' %>
-        <%= link_to 'Delete', user_path(user), class: 'btn btn-outline-danger mr-3' %>
+        <%= link_to 'Delete', user_path(user), class: 'btn btn-outline-danger mr-3',  method: :delete, remote: true %>
       <% end %>
     </div>
   </div>
