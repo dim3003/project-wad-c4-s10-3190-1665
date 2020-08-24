@@ -3,11 +3,47 @@ var Comments
 Comments = {}
 
 Comments.displayComment = function(comment) {
-
+  <blockquote class="blockquote">
+          <p class="mb-0">great</p>
+          <footer class="blockquote-footer">
+            Added by <a href="/en/users/4">
+                     <img class="avatar-xs" alt="Avatar for " src="https://68.media.tumblr.com/7d65a925636d6e3df94e2ebe30667c29/tumblr_nq1zg0MEn51qg6rkio1_500.jpg">
+              </a> on 22 Aug 2020 at 16:36</footer>
+        </blockquote>
 
   var commentBody = document.createElement('p');
   commentBody.className = "mb-0";
-  commentBody.createTextNode(comment.)
+  commentBody.createTextNode(comment.body)
+
+
+  var footer = document.createElement('footer');
+  footer.className = "blockquote-footer";
+  footer.createTextNode('Added by')
+  footer.appendChild(commentUser)
+
+  var avatar = document.createElement('img');
+  avatar.className = 'avatar-xs';
+  avatar.setAttribute('alt', 'Avatar for');
+  avatar.setAttribute('src', '#images/avatar.png');
+
+  var commentUser = document.createElement('a');
+  commentUser.setAttribute('href', comment.user);
+  commentUser.appendChild(avatar);
+
+
+  var commentListItem = document.createElement('blockquote');
+  commentListItem.appendChild(document.createTextNode(comment.body));
+
+
+  var comments = document.getElementById('commentList');
+  comments.appendChild(commentListItem);
+
+  }
+
+/*
+  var commentBody = document.createElement('p');
+  commentBody.className = "mb-0";
+  commentBody.createTextNode(comment.body)
 
 
   var footer = document.createElement('footer');
@@ -66,4 +102,6 @@ Comments.displayComment = function(comment) {
   var comments = document.getElementById('commentList');
   comments.insertBefore(commentListItem, comments.firstChild);
 
-}
+
+
+*/
