@@ -3,6 +3,40 @@ var Comments
 Comments = {}
 
 Comments.displayComment = function(comment) {
+
+
+  var commentBody = document.createElement('p');
+  commentBody.className = "mb-0";
+  commentBody.createTextNode(comment.)
+
+
+  var footer = document.createElement('footer');
+  footer.className = "blockquote-footer";
+  footer.createTextNode('Added by')
+  footer.appendChild(commentUser)
+
+  var avatar = document.createElement('img');
+  avatar.className = 'avatar-xs';
+  avatar.setAttribute('alt', 'Avatar for');
+  avatar.setAttribute('src', '#images/avatar.png');
+
+  var commentUser = document.createElement('a');
+  commentUser.setAttribute('href', comment.user);
+  commentUser.appendChild(avatar);
+
+
+  var commentTime = document.createElement('time');
+  commentTime.setAttribute('datetime', comment.datetime);
+  commentTime.appendChild(document.createTextNode(comment.when));
+
+
+
+
+  var commentList = document.createElement('div');
+  commentList.className = 'm-3';
+
+---------------
+
   var commentTime = document.createElement('time');
   commentTime.setAttribute('datetime', comment.datetime);
   commentTime.appendChild(document.createTextNode(comment.when));
