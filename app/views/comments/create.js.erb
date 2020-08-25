@@ -2,9 +2,11 @@
 
 var comment = {
   'datetime': '<%= @comment.created_at.strftime('%FT%R') %>',
+  'commenterUrl': '<%= users_path(@comment.user) %>',
   'commenter': '<%= @comment.user.name %>',
-  'body': '<%= @comment.body %>'
-};
+  'body': '<%= @comment.body %>',
+  'avatar': '<%= @comment.user.avatar %>'
+}
 
 
 
