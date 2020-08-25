@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
     get 'signup', to: 'users#new'
 
+    get '/users/:id', to: 'users#show', as: 'userLink'
+
     namespace :account do
       resources :tips, only: [:index]
     end
