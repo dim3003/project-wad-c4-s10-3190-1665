@@ -8,4 +8,4 @@ When you've completed the project, update this README to include the full public
 
 ## Deployed URL
 
-Public Heroku URL: <enter URL here>
+Public Heroku URL: https://enigmatic-temple-97761.herokuapp.com/
