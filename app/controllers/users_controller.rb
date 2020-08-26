@@ -56,21 +56,21 @@ class UsersController < ApplicationController
 
   private
 
-    def set_user
-      @user = User.find(params[:id])
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def user_params
+    params.require(:user).permit(:email, :name, :avatar, :password)
+  end
+
+  def ensure_admin
+    if (current_user.role == 'admin')
+      return
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def user_params
-      params.require(:user).permit(:email, :name, :avatar, :password)
-    end
-
-    def ensure_admin
-      if (current_user.role == 'admin')
-        return
-      end
-
-      redirect_to(account_path)
-    end
+    redirect_to(account_path)
+  end
 
 end

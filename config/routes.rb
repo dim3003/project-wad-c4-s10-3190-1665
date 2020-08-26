@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
     get 'login', to: 'sessions#new'
 
-    get 'signup', to: 'users#new'
+    get 'signup', to: 'users#new', as: 'signup'
 
     get '/users/:id', to: 'users#show', as: 'userLink'
 
