@@ -33,7 +33,7 @@ en:
   signup: "Sign up"
   login: "Log in"
   email: "Email"
-  password: "password"
+  password: "Password"
   account: "Account"
   mission_statement: "Share your programming tips with other developers online!"
   find_tips: "... or find tips about something:"
@@ -43,4 +43,9 @@ en:
       user:
         name: 'Name'
         email: 'Email'
-        password: 'password'
+        password: 'Password'
+  helpers:
+    label:
+      tip:
+        title: 'Title'
+        Body: 'Body'

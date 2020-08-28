@@ -25,6 +25,15 @@ sara    = User.create!(email: 'sara@extensionschool.ch',
 linda   = User.create!(email: 'linda@extensionschool.ch',
                        name: 'Linda',
                        password: 'password')
+linda1  = User.create!(email: 'user1@extensionschool.ch',
+                       name: 'Linda',
+                       password: 'password')
+linda2  = User.create!(email: 'user2@extensionschool.ch',
+                       name: 'Linda',
+                       password: 'password')
+linda3  = User.create!(email: 'user3@extensionschool.ch',
+                       name: 'Linda',
+                       password: 'password')
 
 admin   = User.create!(email: 'admin@epfl.com',
                        password: 'password',
@@ -37,7 +46,6 @@ tip_florian_1 = Tip.create!(title: 'Use #name on a class in Ruby',
 Tip.create!(title: 'Getting a substring in Ruby',
             body: 'Use String#[start,length] to return the substring of a String, e.g. "Hello, world"[7,5] => "world"',
             user:  florian)
-
 Tip.create!(title: 'Going backwards in an Array',
             body:  "It's possible to use negative numbers as backwards indexes in Arrays e.g. [1,2,3,4][-1] => 4",
             user:  florian)
@@ -45,13 +53,12 @@ Tip.create!(title: 'Going backwards in an Array',
 tip_sara_1 = Tip.create!(title: 'Using ERB in CSS and Sass files',
                          body:  "Did you know that you can define CSS assets as ERB files, just like .html.erb and .js.erb views?  By using .scss.erb as the extension of a file, the asset pipeline will first process the file as ERB and evaluate Ruby expressions.  Then it will treat the file as Sass and compile it to CSS!",
                          user:  sara)
-
 Tip.create!(title: 'Substitute a value in a String',
             body:  "String#gsub can be used to replace any substring with another substring in a String, e.g. 'Learn about :language'.gsub(':language', 'JavaScript') => \"Learn about JavaScript\"",
             user:  sara)
-            Tip.create!(title: 'Multi-line Strings using %Q',
-                        body:  percent_q_string,
-                        user:  sara)
+Tip.create!(title: 'Multi-line Strings using %Q',
+            body:  percent_q_string,
+            user:  sara)
 Tip.create!(title: 'Using underscores in numbers',
             body:  "It's pretty cool that underscores can be used to define numbers in Ruby, such as 16_453 or 12_345_678.  It can make big numbers much more readable!",
             user:  sara)

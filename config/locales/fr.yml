@@ -13,3 +13,8 @@ fr:
         name: 'Nom'
         email: 'Email'
         password: 'Mot de passe'
+  helpers:
+    label:
+      tip:
+        title: 'Titre'
+        body: 'Texte'

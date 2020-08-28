@@ -2,11 +2,11 @@ class TipsController < ApplicationController
   include RolesHelper
 
 
-  before_action :ensure_authenticated,   only: [:new, :create, :edit, :update]
+  before_action :ensure_authenticated,   only: [:new, :create]
 
   before_action :set_tip,                only: [:show, :edit, :update, :destroy]
 
-  before_action :authorize_to_edit_tip, only: [:edit, :update]
+  before_action :authorize_to_edit_tip, only: [:edit, :update, :destroy]
 
   def index
     @tips = Tip.search(params[:q]).page(params[:page])
