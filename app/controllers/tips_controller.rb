@@ -19,9 +19,6 @@ class TipsController < ApplicationController
     @tip = Tip.new
   end
 
-  def edit
-  end
-
   def create
     @tip = Tip.new(tip_params)
     @tip.user = current_user
@@ -36,6 +33,9 @@ class TipsController < ApplicationController
         format.html { render :new }
       end
     end
+  end
+
+  def edit
   end
 
   def update
